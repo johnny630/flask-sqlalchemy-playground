@@ -25,7 +25,8 @@ class TestingConfig(BaseConfig):
 
     # Flask-sqlalchemy
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "test.db")
+    SQLALCHEMY_DATABASE_URI = os.getenv('DB')
+    # SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "test.db")
 
 config = {
     'production': ProductionConfig,

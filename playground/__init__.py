@@ -37,5 +37,11 @@ def create_app():
 
     from .models.comment import Comment
     from .models.user import User
+    from .models.post import Post, Category
+
+    @app.shell_context_processor
+    def make_shell_context():
+        from . import models
+        return dict(Post=Post, Category=Category, models=models, db=db)
 
     return app
