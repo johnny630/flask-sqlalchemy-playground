@@ -9,7 +9,6 @@ __pycache__/
 # Customs
 .vscode
 migrations
-*.flaskenv
 
 # Distribution / packaging
 .Python

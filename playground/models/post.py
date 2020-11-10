@@ -13,13 +13,26 @@ class Post(db.Model):
     category = db.relationship('Category',
         backref=db.backref('posts', lazy=True))
 
-    # def __repr__(self):
-    #     return '<Post %r>' % self.title
+    def __repr__(self):
+        return '<Post %r>' % self.title
 
 
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
 
-    # def __repr__(self):
-    #     return '<Category %r>' % self.name
+    def __repr__(self):
+        return '<Category %r>' % self.name
+
+
+# category = Category(name='test')
+# post = Post(title='Hello Python!', body='Python is pretty cool', category=category)
+# db.session.add(post)
+# db.session.commit()
+
+# from flask_sqlalchemy import get_debug_queries
+# for query in get_debug_queries():
+#     print(query.statement)
+#     print(query.parameters)
+#     print(query.duration)
+#     print(query.context)
