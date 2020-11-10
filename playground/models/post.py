@@ -16,6 +16,16 @@ class Post(db.Model):
     def __repr__(self):
         return '<Post %r>' % self.title
 
+# Single table
+## select
+# Post.query.count()
+# Post.query.get(1)                         get by id
+# Post.query.limit(2).all()                 Limiting
+# Post.query.order_by(Post.title).all()     Ordering
+# Post.query.filter_by(title='title1').first()   where
+#
+## update
+# 
 
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
