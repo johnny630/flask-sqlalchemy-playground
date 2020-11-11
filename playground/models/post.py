@@ -25,7 +25,17 @@ class Post(db.Model):
 # Post.query.filter_by(title='title1').first()   where
 #
 ## update
-# 
+# post = Post.query.get(1)
+# post.body = 'body1'
+# db.session.commit()
+#
+# Post.query.update({Post.body: 'test'}) 
+# db.session.commit()
+#
+## delete
+# post = Post.query.get(1)
+#
+#
 
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
